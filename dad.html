@@ -1,0 +1,298 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset='UTF-8'>
+
+      <title>jQuery Gridly</title>
+
+
+
+      <link href='css/jquery.gridly.css' rel='stylesheet' type='text/css'>
+      <link href="css/mui.min.css" rel="stylesheet"/>
+
+     <!-- <link href='css/sample.css' rel='stylesheet' type='text/css'>-->
+
+      <script src='js/jquery.js' type='text/javascript'></script>
+
+      <script src='js/jquery.gridly.js' type='text/javascript'></script>
+
+      <!--<script src='js/sample.js' type='text/javascript'></script>-->
+			<script src="js/mui.min.js"></script>
+      <!--<script src='javascripts/rainbow.js' type='text/javascript'></script>-->
+
+      
+
+    </meta>
+
+	<style type="text/css">
+  .gridly
+  {
+    position: relative;
+    margin-top: 30%;
+    width: 100%;
+    height:326px;
+  }  
+   .gridly img{
+   	width:80px;
+   	height:80px;
+   }
+   .mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body {
+    font-size:30px;
+    line-height: 30px;
+    display: block;
+    width: 100%;
+    height: 30px;
+    margin-top: 8px;
+    text-overflow: ellipsis;
+    color: #333;
+  }
+	.mui-table-view.mui-grid-view .mui-table-view-cell {
+	    font-size: 17px;
+	    display: inline-block;
+	    margin-right: -4px;
+	    padding: 10px 0 0 5px;
+	    text-align: center;
+	    vertical-align: middle;
+	    background: 0 0;
+	}
+.delete{
+	font-size: 56px;
+	color:red;
+	position: absolute;
+	top:0; 
+	right:0;
+}
+.mui-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 998;
+    background-color: rgba(0,0,0,.3);
+}
+.closeBtn{
+	border:none;
+	width:100%;	
+  font-size: 48px;
+  position: absolute;
+  bottom: 30px;
+	border-top:1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+</style>
+  </head>
+
+  <body>
+  	<!--<button onclick="showMask()">click</button>-->
+  	<!--<div class="mui-backdrop" style="display:none;">-->
+    <div class='content mui-table-view mui-grid-view' style="width:100%">
+        <div class="gridly">		
+						<div class="mui-table-view-cell mui-media ">
+							<a   href="#"><div class='delete'>&times;</div>
+								<img src="img/website.png" >
+								<div class="mui-media-body">
+									百度1
+								</div>
+							</a>
+						</div>
+						<div class="mui-table-view-cell mui-media ">
+							<a   href="#"><div class='delete'>&times;</div>
+								<img src="img/website.png" >
+								<div class="mui-media-body">
+									百度2
+								</div>
+							</a>
+						</div>
+						<div class="mui-table-view-cell mui-media ">
+							<a   href="#"><div class='delete'>&times;</div>
+								<img src="img/website.png" >
+								<div class="mui-media-body">
+									百度3
+								</div>
+							</a>
+						</div>
+						<div class="mui-table-view-cell mui-media ">
+							<a   href="#"><div class='delete'>&times;</div>
+								<img src="img/website.png" >
+								<div class="mui-media-body">
+									百度4
+								</div>
+							</a>
+						</div>
+						<div class="mui-table-view-cell mui-media ">
+							<a   href="#"><div class='delete'>&times;</div>
+								<img src="img/website.png" >
+								<div class="mui-media-body">
+									百度6
+								</div>
+							</a>
+						</div>
+						<div class="mui-table-view-cell mui-media ">
+							<a   href="#"><div class='delete'>&times;</div>
+								<img src="img/website.png" >
+								<div class="mui-media-body">
+									百度7
+								</div>
+							</a>
+						</div>					
+						<div class="mui-table-view-cell mui-media ">
+							<a   href="#"><div class='delete'>&times;</div>
+								<img src="img/website.png" >
+								<div class="mui-media-body">
+									腾讯1
+								</div>
+							</a>
+						</div>
+						<div class="mui-table-view-cell mui-media ">
+							<a   href="#"><div class='delete'>&times;</div>
+								<img src="img/website.png" >
+								<div class="mui-media-body">
+									腾讯2
+								</div>
+							</a>
+						</div>
+						<div class="mui-table-view-cell mui-media ">
+							<a   href="#"><div class='delete'>&times;</div>
+								<img src="img/website.png" >
+								<div class="mui-media-body">
+									腾讯3
+								</div>
+							</a>
+						</div>
+						<div class="mui-table-view-cell mui-media ">
+							<a   href="#"><div class='delete'>&times;</div>
+								<img src="img/website.png" >
+								<div class="mui-media-body">
+									腾讯4
+								</div>
+							</a>
+						</div>
+				<div class="mui-table-view-cell mui-media ">
+							<a   href="#"><div class='delete'>&times;</div>
+								<img src="img/website.png" >
+								<div class="mui-media-body">
+									腾讯6
+								</div>
+							</a>
+						</div>
+						<div class="mui-table-view-cell mui-media ">							
+								<a  href="#">
+									<img src="img/website.png" >
+									<div class="mui-media-body add ">	
+										腾讯7
+									</div>
+								</a>
+						</div>		
+						
+			</div>
+
+    </div>
+    <button class="closeBtn">关闭</button>
+	<!--</div>-->
+	
+
+<script>
+  $('.gridly').gridly({
+    base: 60, // px 
+    gutter: 30, // px
+    columns: 12
+  });
+  //初始化设置
+ $('.gridly').gridly({
+ callbacks: { reordering: reordering , reordered: reordered }
+ });
+  //拖动前回调
+var reordering =function($elements){
+// Called before the drag and drop starts with the elements in their starting position.
+//alert('start');
+};
+ 
+//拖动后回调
+var reordered =function($elements){
+// Called after the drag and drop ends with the elements in their ending position.
+// 当前对象
+console.info('拖动对象');
+var currentObj =this.reordered.arguments[1];
+var currentId = currentObj[0].id;
+alert('拖动对象：'+ currentId);
+ 
+var arr = $elements;
+// 前一个对象
+var prevObj;
+// 后一个对象
+var afterObj;
+for(i =0; i < arr.length; i++){
+if(arr[i].id == currentId){
+if(i >0){
+prevObj = arr[i -1];
+}
+if(i +1< arr.length){
+afterObj = arr[i+1];
+}
+}
+}
+if(prevObj !=undefined){
+alert('前一个对象：'+ prevObj.id)
+}
+if(afterObj !=undefined){
+alert('后一个对象：'+ afterObj.id);
+}
+//执行保存排序，更新数据
+//sortData...
+};
+$('.closeBtn').on('click', function(){
+  	window.location.href="index.html";
+  	
+  })
+   $(function() {
+   	 $('.mui-table-view-cell').click(function() {
+			  $this = $(this);	  
+			  console.info($('.mui-table-view-cell').index($(this)));
+			 	console.info(parseInt($(this).css("left")));
+			 	console.info(parseInt($(this).css("top")));
+			    
+			  return $('.gridly').gridly('layout');
+		});
+
+    $(document).on("click", ".delete", function(event) {
+      var $this;
+      event.preventDefault();
+      event.stopPropagation();
+      $this = $(this);
+      $this.parents('.mui-media').remove();      
+      return $('.gridly').gridly('layout');
+    });
+   })
+  //显示遮罩层    
+    /*function showMask(){     
+           
+        $(".mui-backdrop").show(); 
+        $('.gridly').css({
+        	 position:' relative',				   
+				    height:'326px'
+        })
+        console.info($('.gridly  .mui-media').eq(5));
+        
+        
+    }  */
+    //隐藏遮罩层  
+    /*function hideMask(){     
+        console.info("隐藏")  
+        $(".mui-backdrop").hide();         
+    } */
+	
+</script>
+
+
+
+  </body>
+
+</html>
+

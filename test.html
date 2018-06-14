@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>微米</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+	    <link href="css/mui.min.css" rel="stylesheet"/>
+	    <link href="css/index.css" rel="stylesheet"/> 
+	    <style>
+	   
+			.mui-bar~.mui-content .mui-fullscreen {
+				top: 44px;
+				height: auto;
+			}
+			.mui-pull-top-tips {
+				position: absolute;
+				top: -20px;
+				left: 50%;
+				margin-left: -25px;
+				width: 40px;
+				height: 40px;
+				border-radius: 100%;
+				z-index: 1;
+			}
+			.mui-bar~.mui-pull-top-tips {
+				top: 24px;
+			}
+			.mui-pull-top-wrapper {
+				width: 42px;
+				height: 42px;
+				display: block;
+				text-align: center;
+				background-color: #efeff4;
+				border: 1px solid #ddd;
+				border-radius: 25px;
+				background-clip: padding-box;
+				box-shadow: 0 4px 10px #bbb;
+				overflow: hidden;
+			}
+			.mui-pull-top-tips.mui-transitioning {
+				-webkit-transition-duration: 200ms;
+				transition-duration: 200ms;
+			}
+			.mui-pull-top-tips .mui-pull-loading {
+				/*-webkit-backface-visibility: hidden;
+				-webkit-transition-duration: 400ms;
+				transition-duration: 400ms;*/
+				
+				margin: 0;
+			}
+			.mui-pull-top-wrapper .mui-icon,
+			.mui-pull-top-wrapper .mui-spinner {
+				margin-top: 7px;
+			}
+			.mui-pull-top-wrapper .mui-icon.mui-reverse {
+				/*-webkit-transform: rotate(180deg) translateZ(0);*/
+			}
+			.mui-pull-bottom-tips {
+				text-align: center;
+				background-color: #efeff4;
+				font-size: 15px;
+				line-height: 40px;
+				color: #777;
+			}
+			.mui-pull-top-canvas {
+				overflow: hidden;
+				background-color: #fafafa;
+				border-radius: 40px;
+				box-shadow: 0 4px 10px #bbb;
+				width: 40px;
+				height: 40px;
+				margin: 0 auto;
+			}
+			.mui-pull-top-canvas canvas {
+				width: 40px;
+			}
+			.mui-slider-indicator.mui-segmented-control {
+				background-color: #efeff4;
+			}
+			/*修改直线*/
+			.mui-table-view:after{
+				height:0px;
+			}
+			.mui-table-view:before{
+				height:0px;
+			}
+			.mui-table-view.mui-grid-view{
+				padding:0;
+			}
+			
+			#list img{
+				float:right;
+			}
+			 div.draging {
+		        width: 150px;
+		        height: 100px;
+		        position: absolute;
+		        background: goldenrod;
+		        box-shadow: 0 0 2px 2px #555;
+		        border-radius: 5px;
+		        z-index: 500;
+		    }
+		</style>
+	</head>
+	<body>
+	<!--顶部-->	
+	<header>
+		<div class="weWrap1" >
+			<dl>
+				<dd class='weImg' style='margin-left:5%;margin-top:-6%'>
+					<a href="#">
+						<img src="img/img1.png" style="width:20%;height:12%;">
+					</a>
+					</a>
+				</dd>	
+				<dt class='weText' style="margin-left:25%;margin-top:-20%">
+					<p class="weTop" style="font-size:1.3em;color:#595959;">11℃</p>	
+					<p class="weBottom" style="width:90px;margin-top:-10%;">
+						<span style=" font-size:0.5em ;color:#818181;">上海</span>
+						<span style="padding-left:1% ;font-size:0.5em ;color:#818181;">|</span>
+						<span style=" font-size:0.5em ;color:#818181;">空气良</span>
+					</p>
+				</dt>	
+				
+			</dl>
+		</div>
+		<div class="weWrap2">
+			<button style="font-size:0.8em;  border:none;color:#828BFF; background-color: #E1E5F4; border-radius:20px ; float: right;">
+				<a href="#" style="color:#828BFF">积分商城</a>
+				<span class="mui-icon mui-icon-info" style="font-size:0.8em; color:#828BFF;"></span>				
+			</button>
+		</div>
+	</header>
+	<!--搜索-->	
+	<div class="mui-input-row iptWrap" style='Z-index:99;'>
+		<label style="width:10%;">
+			<span class="mui-icon mui-icon-search" style="font-size:1.2em"></span>
+		</label>
+		<input type="text" style="width:89%; padding-left:1% ;" placeholder="搜索或输入网址">
+	</div>
+	<!--各类网址链接-->
+	<div class="webCenter">	
+		<!--文字网址-->
+			<ul class="mui-table-view mui-grid-view mui-grid-12">
+				<li class="mui-table-view-cell mui-media mui-col-xs-2">
+					<a href="#" style=" font-size:0.7em ;">
+					人民网
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-2">
+					<a href="#" style=" font-size:0.7em ;padding: 0;margin: 0;">
+					新华网	
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-2">
+					<a href="#" style=" font-size:0.7em ;padding: 0;margin: 0;">
+						央视网
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-2">
+					<a href="#" style=" font-size:0.7em ;padding: 0;margin: 0;">
+						网信网
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-2">
+					<a href="#" style=" font-size:0.7em ;padding: 0;margin: 0;">
+						央广网
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-2">
+					<a href="#" style=" font-size:0.7em ;padding: 0;margin: 0;">
+						中国网
+					</a>
+				</li>					
+			</ul>			
+		<!--九宫图-->	
+		<div id="Gallery" class="mui-slider"style="width:100%;height:60%;">
+			<div class="mui-slider-group">
+				<div class="mui-slider-item">
+					<ul class="mui-table-view mui-grid-view mui-grid-12">
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#">
+								<img src="img/website.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body" style=" font-size:0.7em ;padding: 0;margin: 0;">
+									百度
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#">
+								<img src="img/baidu.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding: 0;margin: 0;">
+									百度
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#" >
+								<img src="img/baidu.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding: 0;margin: 0;">
+									百度
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#">
+								<img src="img/baidu.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding: 0;margin: 0;">
+									百度
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#" >
+								<img src="img/baidu.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding: 0;margin: 0;">
+									百度
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#">
+								<img src="img/baidu.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding: 0;margin: 0;">
+									搜狐
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#">
+								<img src="img/baidu.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding: 0;margin: 0;">
+									百度
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#">
+								<img src="img/baidu.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding: 0;margin: 0;">
+									百度
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#">
+								<img src="img/baidu.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding: 0;margin: 0;">
+									百度
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#">
+								<img src="img/baidu.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding: 0;margin: 0;">
+									百度
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#">
+								<img src="img/baidu.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding: 0;margin: 0;">
+									百度
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#">
+								<img src="img/baidu.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding: 0;margin: 0;">
+									百度
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="mui-slider-item">
+					<ul class="mui-table-view mui-grid-view mui-grid-12">
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#">
+								<img src="img/baidu.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding: 0;margin: 0;">
+									百度
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#">
+								<img src="img/baidu.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding: 0;margin: 0;">
+									百度
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#">
+								<img src="img/baidu.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding: 0;margin: 0;">
+									百度
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#">
+								<img src="img/baidu.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding: 0;margin: 0;">
+									百度
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#">
+								<img src="img/baidu.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding: 0;margin: 0;">
+									百度
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#">
+								<img src="img/baidu.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding: 0;margin: 0;">
+									百度
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#">
+								<img src="img/baidu.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding: 0;margin: 0;">
+									百度
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#">
+								<img src="img/baidu.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding: 0;margin: 0;">
+									百度
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#">
+								<img src="img/baidu.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding: 0;margin: 0;">
+									百度
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#">
+								<img src="img/baidu.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding: 0;margin: 0;">
+									百度
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="mui-slider-indicator" >
+				<div class="mui-indicator mui-active" 
+				style="width:2px;height:2px;position:absolute;left:45%"></div>
+				<div class="mui-indicator"
+					 style="width:2px;height:2px;position:absolute;left:50%"></div>
+			</div>
+		</div>
+		<!--网址-->
+		<ul class="mui-table-view mui-grid-view mui-grid-11"style="width:100%;height:30%">
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#">
+								<img src="img/website.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding:0 ;margin:0 ;">
+									百度
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#">
+								<img src="img/website.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding: 0;margin: 0;">
+									百度
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#">
+								<img src="img/website.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding: 0;margin: 0;">
+									百度
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#">
+								<img src="img/website.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding: 0;margin: 0;">
+									百度
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#">
+								<img src="img/website.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding: 0;margin: 0;">
+									百度
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-2">
+							<a href="#">
+								<img src="img/website.png" style="width:80%; height: 80%;">
+								<div class="mui-media-body"style=" font-size:0.7em ;padding: 0;margin: 0;">
+									百度
+								</div>
+							</a>
+						</li>					
+					</ul>
+	</div>
+		
+	<!--tab切换-->
+	<!--<div class="mui-content">
+			<div id="slider" class="mui-slider mui-fullscreen">
+				<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<div class="mui-scroll">
+						<a class="mui-control-item mui-active" href="#item1mobile">
+							热点资讯
+						</a>
+						<a class="mui-control-item" href="#item2mobile">
+							今日头条
+						</a>
+						<a class="mui-control-item" href="#item3mobile">
+							东方头条
+						</a>
+						<a class="mui-control-item" href="#item4mobile">
+							百度看点
+						</a>
+						
+					</div>
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3"></div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-1
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-2
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-3
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-4
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-5
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-6
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-7
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-8
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-9
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-10
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-11
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-12
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-13
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-14
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-15
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-16
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-17
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-18
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-19
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-20
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										第2个选项卡子项-1
+									</li>
+									<li class="mui-table-view-cell">
+										第2个选项卡子项-2
+									</li>
+									<li class="mui-table-view-cell">
+										第2个选项卡子项-3
+									</li>
+									<li class="mui-table-view-cell">
+										第2个选项卡子项-4
+									</li>
+									<li class="mui-table-view-cell">
+										第2个选项卡子项-5
+									</li>
+									<li class="mui-table-view-cell">
+										第2个选项卡子项-6
+									</li>
+									<li class="mui-table-view-cell">
+										第2个选项卡子项-7
+									</li>
+									<li class="mui-table-view-cell">
+										第2个选项卡子项-8
+									</li>
+									<li class="mui-table-view-cell">
+										第2个选项卡子项-9
+									</li>
+									<li class="mui-table-view-cell">
+										第2个选项卡子项-10
+									</li>
+									<li class="mui-table-view-cell">
+										第2个选项卡子项-11
+									</li>
+									<li class="mui-table-view-cell">
+										第2个选项卡子项-12
+									</li>
+									<li class="mui-table-view-cell">
+										第2个选项卡子项-13
+									</li>
+									<li class="mui-table-view-cell">
+										第2个选项卡子项-14
+									</li>
+									<li class="mui-table-view-cell">
+										第2个选项卡子项-15
+									</li>
+									<li class="mui-table-view-cell">
+										第2个选项卡子项-16
+									</li>
+									<li class="mui-table-view-cell">
+										第2个选项卡子项-17
+									</li>
+									<li class="mui-table-view-cell">
+										第2个选项卡子项-18
+									</li>
+									<li class="mui-table-view-cell">
+										第2个选项卡子项-19
+									</li>
+									<li class="mui-table-view-cell">
+										第2个选项卡子项-20
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item3mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										第3个选项卡子项-1
+									</li>
+									<li class="mui-table-view-cell">
+										第3个选项卡子项-2
+									</li>
+									<li class="mui-table-view-cell">
+										第3个选项卡子项-3
+									</li>
+									<li class="mui-table-view-cell">
+										第3个选项卡子项-4
+									</li>
+									<li class="mui-table-view-cell">
+										第3个选项卡子项-5
+									</li>
+									<li class="mui-table-view-cell">
+										第3个选项卡子项-6
+									</li>
+									<li class="mui-table-view-cell">
+										第3个选项卡子项-7
+									</li>
+									<li class="mui-table-view-cell">
+										第3个选项卡子项-8
+									</li>
+									<li class="mui-table-view-cell">
+										第3个选项卡子项-9
+									</li>
+									<li class="mui-table-view-cell">
+										第3个选项卡子项-10
+									</li>
+									<li class="mui-table-view-cell">
+										第3个选项卡子项-11
+									</li>
+									<li class="mui-table-view-cell">
+										第3个选项卡子项-12
+									</li>
+									<li class="mui-table-view-cell">
+										第3个选项卡子项-13
+									</li>
+									<li class="mui-table-view-cell">
+										第3个选项卡子项-14
+									</li>
+									<li class="mui-table-view-cell">
+										第3个选项卡子项-15
+									</li>
+									<li class="mui-table-view-cell">
+										第3个选项卡子项-16
+									</li>
+									<li class="mui-table-view-cell">
+										第3个选项卡子项-17
+									</li>
+									<li class="mui-table-view-cell">
+										第3个选项卡子项-18
+									</li>
+									<li class="mui-table-view-cell">
+										第3个选项卡子项-19
+									</li>
+									<li class="mui-table-view-cell">
+										第3个选项卡子项-20
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item4mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										第4个选项卡子项-1
+									</li>
+									<li class="mui-table-view-cell">
+										第4个选项卡子项-2
+									</li>
+									<li class="mui-table-view-cell">
+										第4个选项卡子项-3
+									</li>
+									<li class="mui-table-view-cell">
+										第4个选项卡子项-4
+									</li>
+									<li class="mui-table-view-cell">
+										第4个选项卡子项-5
+									</li>
+									<li class="mui-table-view-cell">
+										第4个选项卡子项-6
+									</li>
+									<li class="mui-table-view-cell">
+										第4个选项卡子项-7
+									</li>
+									<li class="mui-table-view-cell">
+										第4个选项卡子项-8
+									</li>
+									<li class="mui-table-view-cell">
+										第4个选项卡子项-9
+									</li>
+									<li class="mui-table-view-cell">
+										第4个选项卡子项-10
+									</li>
+									<li class="mui-table-view-cell">
+										第4个选项卡子项-11
+									</li>
+									<li class="mui-table-view-cell">
+										第4个选项卡子项-12
+									</li>
+									<li class="mui-table-view-cell">
+										第4个选项卡子项-13
+									</li>
+									<li class="mui-table-view-cell">
+										第4个选项卡子项-14
+									</li>
+									<li class="mui-table-view-cell">
+										第4个选项卡子项-15
+									</li>
+									<li class="mui-table-view-cell">
+										第4个选项卡子项-16
+									</li>
+									<li class="mui-table-view-cell">
+										第4个选项卡子项-17
+									</li>
+									<li class="mui-table-view-cell">
+										第4个选项卡子项-18
+									</li>
+									<li class="mui-table-view-cell">
+										第4个选项卡子项-19
+									</li>
+									<li class="mui-table-view-cell">
+										第4个选项卡子项-20
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item5mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-1
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-2
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-3
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-4
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-5
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-6
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-7
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-8
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-9
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-10
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-11
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-12
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-13
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-14
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-15
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-16
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-17
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-18
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-19
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-20
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item6mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-1
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-2
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-3
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-4
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-5
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-6
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-7
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-8
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-9
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-10
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-11
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-12
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-13
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-14
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-15
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-16
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-17
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-18
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-19
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-20
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+-->
+	<!--浏览器底部-->
+	
+	<script src="js/mui.min.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/mui.pullToRefresh.js"></script>
+	<script src="js/mui.pullToRefresh.material.js"></script>
+		<script>
+			mui.init();
+			(function($) {
+				//阻尼系数
+				var deceleration = mui.os.ios?0.003:0.0009;
+				$('.mui-scroll-wrapper').scroll({
+					bounce: false,
+					indicators: true, //是否显示滚动条
+					deceleration:deceleration
+				});
+				$.ready(function() {
+					//循环初始化所有下拉刷新，上拉加载。
+					$.each(document.querySelectorAll('.mui-slider-group .mui-scroll'), function(index, pullRefreshEl) {
+						$(pullRefreshEl).pullToRefresh({
+							down: {
+								callback: function() {
+									var self = this;
+									setTimeout(function() {
+										var ul = self.element.querySelector('.mui-table-view');
+										ul.insertBefore(createFragment(ul, index, 10, true), ul.firstChild);
+										self.endPullDownToRefresh();
+									}, 1000);
+								}
+							},
+							up: {
+								callback: function() {
+									var self = this;
+									setTimeout(function() {
+										var ul = self.element.querySelector('.mui-table-view');
+										ul.appendChild(createFragment(ul, index, 5));
+										self.endPullUpToRefresh();
+									}, 1000);
+								}
+							}
+						});
+					});
+					var createFragment = function(ul, index, count, reverse) {
+						var length = ul.querySelectorAll('li').length;
+						var fragment = document.createDocumentFragment();
+						var li;
+						for (var i = 0; i < count; i++) {
+							li = document.createElement('li');
+							li.className = 'mui-table-view-cell';
+							li.innerHTML = '第' + (index + 1) + '个选项卡子项-' + (length + (reverse ? (count - i) : (i + 1)));
+							fragment.appendChild(li);
+						}
+						return fragment;
+					};
+				});
+			})(mui);
+		  		
+		</script>
+		<script>  
+            window.onload=function(){  
+                if(document.documentElement.scrollHeight <= document.documentElement.clientHeight) {  
+                    bodyTag = document.getElementsByTagName('body')[0];  
+                    bodyTag.style.height = document.documentElement.clientWidth / screen.width * screen.height + 'px';  
+                }  
+                setTimeout(function() {  
+                    window.scrollTo(0, 1)  
+                }, 0);  
+            };  
+            var bstop = true;
+             $('#Gallery .mui-table-view-cell').on('mousedown', function(e) {
+		        if (bstop) {
+		            bstop = false;
+		            var that = this;
+		            var disx = e.offsetX; //获取的拖拽过程的短线的长度（鼠标的位置离盒子边缘的位置）
+		            var disy = e.offsetY;
+		            var $clone = $(this).clone(); //克隆
+		            $clone.addClass('draging').css({ //对克隆的盒子设置类名以及位置
+		                left: $(this).position().left,
+		                top: $(this).position().top
+		            });
+		            $('#Gallery').append($clone); //追加到box里面
+		            $(this).addClass('moving').html(''); //被克隆的元素添加类移除内容
+		            $('#Gallery').on('mousemove', function(e) { //对克隆的盒子进行拖拽
+		                $clone.css({
+		                    left: e.pageX - $(this).offset().left - disx,
+		                    top: e.pageY - $(this).offset().top - disy
+		                })
+		               
+		            });
+		
+		            $clone.on('mouseup', function() {
+		                $('#Gallery').off('mousemove'); //取消mousemove事件
+		                var minIndex = $(that).index(); //最小索引赋初始值
+		                var minValue = 1000; //初始化最小值，用来存储所有盒子的最小值
+		                $('#Gallery .mui-table-view-cell').not(':last').each(function() { //不包括克隆的那个盒子
+		                    var smalldistance = Math.sqrt(Math.pow($clone.position().left - $(this).position().left, 2) + Math.pow($clone.position().top - $(this).position().top, 2)); //利用勾股定理获取每一个盒子离克隆出来的盒子的距离
+		                    if (smalldistance < minValue) { //比较
+		                        minValue = smalldistance; //获取最小值
+		                        minIndex = $(this).index(); //获取最小值对应的索引
+		                    }
+		                });
+		                if (minIndex == $(that).index()) { //如果当前最小距离的那个盒子和拖拽的盒子索引相等的话，归位。
+		                    $clone.animate($(that).position(), 400, function() {
+		                        $(that).removeClass('moving').html($clone.html()); //恢复被克隆盒子的相关样式
+		                        $(this).remove(); //移除被克隆的盒子
+		                        bstop=true;
+		                    });
+		                } else {
+		                    var $minbox = $('#Gallery .mui-table-view-cell').eq(minIndex); //最小索引的盒子
+		                    var $clone2 = $minbox.clone(); //克隆一个最小盒子的副本，添加相关样式
+		                    $clone2.addClass('draging').css({
+		                        left: $minbox.position().left,
+		                        top: $minbox.position().top
+		                    })
+		                    $('#Gallery').append($clone2); //追加
+		                    $minbox.addClass('moving').html('');
+		                    $clone.animate($minbox.position(), 400, function() { //克隆的内容运动到最小索引的盒子的位置
+		                        $minbox.removeClass('moving').html($clone.html()); //移除相关样式，添加内容
+		                        $clone.remove(); //移除克隆的盒子
+		                        bstop = true;
+		                    });
+		                    $clone2.animate($(that).position(), 400, function() {
+		                        $(that).removeClass('moving').html($clone2.html());
+		                        $clone2.remove();
+		                        bstop = true;
+		                    });
+		                }
+		            });
+		        }
+		        return false;
+    });
+        </script> 
+</body>	
+</html>

@@ -1,0 +1,192 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset='UTF-8'>
+
+      <title>jQuery Gridly</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+      <link href='css/jquery.gridly.css' rel='stylesheet' type='text/css'>
+      <link href="css/mui.min.css" rel="stylesheet"/>
+      <script src='js/jquery.js' type='text/javascript'></script>
+
+      <script src='js/jquery.gridly.js' type='text/javascript'></script>      
+			<script src="js/mui.min.js"></script>
+
+      
+
+    </meta>
+
+	<style type="text/css">
+  .gridly
+  {
+    position: relative;
+    margin-top: 30%;
+    width: 100%;
+    height:326px;
+  }
+   .gridly img{
+   	width:36px;
+   	height:36px;
+   }
+  
+.delete{
+	font-size: 20px;
+	color:red;
+	position: absolute;
+	top:0; 
+	right:0;
+}
+.mui-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 998;
+    background-color: rgba(0,0,0,.3);
+}
+.mui-table-view.mui-grid-view .mui-table-view-cell {
+    font-size: 17px;
+    display: inline-block;
+    margin-right: -4px;
+    padding: 10px 0 0 8px;
+    text-align: center;
+    vertical-align: middle;
+    background: 0 0;
+}
+.closeBtn{
+	border:none;
+	width:100%;	
+  font-size: 24px;
+  position: absolute;
+  bottom: 30px;
+	border-top:1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+</style>
+  </head>
+
+  <body style="width:100%;">
+  	<!--<button onclick="showMask()">click</button>-->
+  	<!--<div class="mui-backdrop" style="display:none;">-->
+    <div class='content mui-table-view mui-grid-view' style="width:100%">
+        <div class="gridly" id='gridly'>       	
+    		</div>    
+		</div>
+		<button class="closeBtn">关闭</button>
+		<!--</div>-->
+<script>
+		 
+		
+			
+		  
+			window.onload=function(){
+	  					getItems();
+	  			}
+  			
+		  var createFragment = function(count) {
+					var fragment = document.createDocumentFragment();
+					var div;
+					for (var i = 0; i < count; i++) {
+						div = document.createElement('div');
+						div.className = 'mui-table-view-cell mui-media';
+						div.innerHTML = '<a href="#"><div class="delete">&times;</div>'
+						+'<img src="img/baidu.png">' 
+						+'<div class="mui-media-body">'
+						+'百度'+i+'</div></a>';
+						fragment.appendChild(div);
+					}
+					return fragment;
+				};	
+			function grdlySet(){
+				$('.content').css({
+			  	 width: '100%',
+   				 height:'170px',
+   				 backgroundColor:'white'
+			  	
+			  })
+				 $('.gridly').gridly({
+			    base: 27.4, // px 
+			    gutter: 4, // px
+			    columns: 12
+			  });
+			  
+				$(".mui-table-view-cell").on("mouseup", function(event) {
+				  $this = $(this);	
+				  alert($(this).find("div").text()+ " mouseup!");
+				  console.info($('.mui-table-view-cell').index($(this)));
+				 	console.info(parseInt($(this).css("left")));
+				 	console.info(parseInt($(this).css("top")));
+				    
+				  return $('.gridly').gridly('layout');
+				});
+
+		    $(document).on("click", ".delete", function(event) {
+		      var $this;
+		      event.preventDefault();
+		      event.stopPropagation();
+		      $this = $(this);
+		      $this.parents('.mui-media').remove();      
+		      return $('.gridly').gridly('layout');
+		    });
+		    var reordering = function($elements) {
+				  // Called before the drag and drop starts with the elements in their starting position.
+				  console.info($('.mui-table-view-cell').index($(this)));
+				};
+				
+				var reordered = function($elements) {
+				  // Called after the drag and drop ends with the elements in their ending position.
+				  console.info($('.mui-table-view-cell').index($(this)));
+				};
+				
+				$('.gridly').gridly({
+				  callbacks: { reordering: reordering , reordered: reordered }
+				});
+			
+}
+	    function getItems(){
+	    	var gridly = document.getElementById("gridly");
+				gridly.appendChild(createFragment(localStorage.getItem('length')));
+				grdlySet();
+	    	console.info(localStorage.getItem('length'));
+	    	for(var i=0; i<localStorage.getItem('length'); i++){		    		 
+					var data = JSON.parse(localStorage.getItem(i));
+					console.log("name:"+data.imgUrl+'\r age:'+data.age+"\r home:"+data.home);
+					$('.gridly').find('.mui-media img').attr('src',data.imgUrl);
+					$('.gridly').find('.mui-media .mui-media-body').eq(i).text(data.age);
+					//localStorage.removeItem('data');
+				}						
+	    }
+		 
+			 
+	$('.closeBtn').on('click', function(){
+		  	var length=$('.gridly').find('.mui-table-view-cell').length;
+		  	 function setGridItems(){		  	 	
+						console.info(length); 					
+			    	localStorage.setItem('length',length);
+			    	localStorage.setItem('index',localStorage.getItem('index'));
+				    for(var i=0; i<length; i++){		    		
+				    		grid = {};			    	
+				        grid.imgUrl =$('.gridly').find('.mui-table-view-cell img').eq(i).attr('src') ;
+				        grid.age  = $('.gridly').find('.mui-table-view-cell .mui-media-body').eq(i).text();
+				        grid.left=parseInt('$(".gridly").find(".mui-table-view-cell").eq('+i+').css("left")')
+						}  					
+			        
+			    }		    
+			    setGridItems();
+			    window.location.href="index1.html";
+		 })
+
+</script>
+
+
+</body>
+
+</html>
+

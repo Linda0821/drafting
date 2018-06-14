@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>微米</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+	    <link href="css/mui.min.css" rel="stylesheet"/>
+	    <link href="css/index.css" rel="stylesheet"/> 
+	    <link href='css/jquery.gridly.css' rel='stylesheet' type='text/css'>
+		<style type="text/css">
+		
+		</style>
+	</head>
+	<body>
+	<!--顶部-->	
+	<header>
+		<div class="weWrap1" >
+			<dl>
+				<dd class='weImg' style='margin-left:5%;margin-top:-6%'>
+					<a href="#">
+						<img src="img/img1.png" style="width:20%;height:12%;">
+					</a>
+					</a>
+				</dd>	
+				<dt class='weText' style="margin-left:25%;margin-top:-20%">
+					<p class="weTop" style="font-size:1.3em;color:#595959;">11℃</p>	
+					<p class="weBottom" style="width:90px;margin-top:-10%;">
+						<span style=" font-size:0.5em ;color:#818181;">上海</span>
+						<span style="padding-left:1% ;font-size:0.5em ;color:#818181;">|</span>
+						<span style=" font-size:0.5em ;color:#818181;">空气良</span>
+					</p>
+				</dt>	
+				
+			</dl>
+		</div>
+		<div class="weWrap2">
+			<button style="font-size:0.8em;  border:none;color:#828BFF; background-color: #E1E5F4; border-radius:20px ; float: right;">
+				<a href="#" style="color:#828BFF">积分商城</a>
+				<span class="mui-icon mui-icon-info" style="font-size:0.8em; color:#828BFF;"></span>				
+			</button>
+		</div>
+	</header>
+	<!--搜索-->	
+	<div class="mui-input-row iptWrap" style='background-color: white;'>
+		<label style="width:10%;">
+			<span class="mui-icon mui-icon-search" style="font-size:1.2em"></span>
+		</label>
+		<input type="search" style="width:89%;padding-left:1%; height:43px;line-height:43px ;" placeholder="搜索或输入网址">
+	</div>
+	<!--各类网址链接-->
+	<div class="webCenter">	
+		<!--文字网址-->
+		<ul class="mui-table-view mui-grid-view mui-grid-12">
+				<li class="mui-table-view-cell mui-media mui-col-xs-2">
+					<a href="#" style=" font-size:0.7em ;">
+					人民网
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-2">
+					<a href="#" style=" font-size:0.7em ;padding: 0;margin: 0;">
+					新华网	
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-2">
+					<a href="#" style=" font-size:0.7em ;padding: 0;margin: 0;">
+						央视网
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-2">
+					<a href="#" style=" font-size:0.7em ;padding: 0;margin: 0;">
+						网信网
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-2">
+					<a href="#" style=" font-size:0.7em ;padding: 0;margin: 0;">
+						央广网
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-2">
+					<a href="#" style=" font-size:0.7em ;padding: 0;margin: 0;">
+						中国网
+					</a>
+				</li>					
+		</ul>			
+		<!--九宫图-->	
+		<div id="Gallery" class="mui-slider" style="width:100%;height:55%;">
+			<div class="mui-slider-group" id='mui-slider-group'>
+				<div id='list1' class="mui-slider-item">				
+				</div>
+				<div id='list2' class="mui-slider-item">
+				</div>								
+			</div>
+			<div class="mui-slider-indicator" >
+				<div class="mui-indicator mui-active" 
+				style="width:2px;height:2px;position:absolute;left:45%"></div>
+				<div class="mui-indicator"style="width:2px;height:2px;position:absolute;left:50%"></div>				
+			</div>
+		</div>
+		<!--网址-->
+		<ul id='listWebsite' class="mui-table-view mui-grid-view mui-grid-11"style="width:100%;height:30%">
+					
+		</ul>
+	</div>
+	<div class="mui-content">
+	<div class="newsWrap">		
+		<div class='title'>
+			<img src="img/tubiao.png" style="float：left;width:6%;height:3%">
+			<span style="float：left">火热推荐</span>
+		</div>
+		<dl class="imgList">
+			<dt><img src="img/textimg1.png"> </dt>
+			<dd><a href="#">小说</a></dd>
+		</dl>
+		<dl class="imgList">
+			<dt><img src="img/textimg2.png"> </dt>
+			<dd><a href="#">游戏</a></dd>
+		</dl>
+		<dl class="imgList">
+			<dt><img src="img/textimg3.png"> </dt>
+			<dd><a href="#">直播</a></dd>
+		</dl>		
+	</div>
+	<div style=" width:100%; ">
+		<!--<div id="scroll1" class="mui-scroll-wrapper">
+		<div class="mui-scroll">-->
+		<ul id="listNews"  style="width:100%;height:30%" class="mui-table-view mui-table-view-chevron">
+		</ul>
+		<!--</div>
+		</div>-->
+	</div>
+	</div>
+	<div class="mask" style="display:none;">
+    	<div class='content mui-table-view mui-grid-view' style="width:100%">
+        	<div class="gridly" id='gridly'>       	
+    		</div>    
+		</div>
+		<button class="closeBtn">关闭</button>
+	</div>
+
+<script src="js/mui.min.js"></script>
+<!--<script src="js/mui.pullToRefresh.js"></script>
+<script src="js/mui.pullToRefresh.material.js"></script>-->
+<script src="js/jquery.js"></script>
+<script src="js/jquery.mobile-events.js"></script>
+<script src="js/index.js"></script>
+<script src='js/jquery.gridly.js' type='text/javascript'></script>
+<script>
+	window.onscroll=function(){
+		var t = document.documentElement.scrollTop || document.body.scrollTop;  
+		console.info(t);
+		if(t>0){
+			 console.log("scroll");
+	 		$('.iptWrap').addClass('fixed');
+	 		$('.mui-content').addClass('fixed1');						
+			
+		}
+		
+		
+	}    		
+	$('body').on("swipedown",function(){
+	 console.log("你正在向xia滑动");
+	 $('.iptWrap').removeClass('fixed');
+	 $('.mui-content').removeClass('fixed1');
+	});
+	mui.init();						
+</script>	
+</body>	
+</html>
